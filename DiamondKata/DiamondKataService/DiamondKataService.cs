@@ -5,34 +5,23 @@ namespace DiamondKata.Services
 {
     public class DiamondKataService
     {
-        public string PrintLine(char character, int numIterations)
+        public string PrintLine(char character, int maxLineLength)
         {
             StringBuilder sb = new StringBuilder();
             //get what number of iterations this char should be
             int alphaPosition = char.ToUpper(character) - 64;
             int lineLength = alphaPosition == 1 ? 1 : alphaPosition + (alphaPosition - 1);
-            int trailingSpaces = 0;
+            int trailingSpaces = lineLength == maxLineLength ? 0 : (maxLineLength - lineLength) / 2;
 
-
-            if (lineLength != numIterations) //if this is not the middle line we need to add spaces at the front of back of the sequence.
+            sb.Append(new string(' ', trailingSpaces) + character);
+            if(lineLength==1) //letter A, which is a bit different
             {
-                trailingSpaces = (numIterations - lineLength) / 2;
+                sb.Append(new string(' ', trailingSpaces));
             }
-
-            sb.Append(new string(' ', trailingSpaces));
-
-            for (int n = 1; n <= lineLength; n++)
-            {
-                if (n % 2 == 0)//even number, print space
-                {
-                    sb.Append(" ");
-                }
-                else //odd, print char
-                {
-                    sb.Append(character);
-                }
+            else{
+                sb.Append(new string(' ', lineLength-2)); 
+                sb.Append(character + new string(' ', trailingSpaces));
             }
-            sb.Append(new string(' ', trailingSpaces));
 
             return sb.ToString();
         }
