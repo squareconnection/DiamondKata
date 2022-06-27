@@ -1,5 +1,7 @@
 ﻿using System.Text.RegularExpressions;
+using DiamondKata.Contracts;
 using DiamondKata.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DiamondKata
 {
@@ -7,10 +9,15 @@ namespace DiamondKata
     {
         static void Main(string[] args)
         {
-            var diamondKataService = new DiamondKataService();
+            //setup our DI
+            var serviceProvider = new ServiceCollection()
+            .AddSingleton<IDiamondKataService, DiamondKataService>()
+            .BuildServiceProvider();
+
+            var diamondKataService = serviceProvider.GetService<IDiamondKataService>();
             Console.WriteLine("Input a letter to build your Diamond Kata");
             var input = Console.ReadKey().KeyChar;
-            if (Regex.IsMatch(input.ToString(), @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(input.ToString(), @"^[a-zA-Z]+$") && diamondKataService!=null)
             {
                 var result = diamondKataService.Execute(input);
 

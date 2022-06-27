@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DiamondKataService\DiamondKataService.csproj" />
+      <ProjectReference Include="..\DiamondKataContracts\DiamondKataContracts.csproj" />
   </ItemGroup>
 
 </Project>

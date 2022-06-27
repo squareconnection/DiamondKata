@@ -1,5 +1,6 @@
 using Xunit;
 using DiamondKata.Services;
+using DiamondKata.Contracts;
 
 namespace DiamondKata.Services.Tests
 {
@@ -37,7 +38,7 @@ namespace DiamondKata.Services.Tests
         [InlineData('B', " A \nB B\n A \n")]
         [InlineData('C', "  A  \n B B \nC   C\n B B \n  A  \n")]
         public void Execute_ResultsInExpected(char character, string expectedResult){
-            var diamondKataService = new DiamondKataService();
+            IDiamondKataService diamondKataService = new DiamondKataService();
             var result = diamondKataService.Execute(character);
 
             Assert.Equal(expectedResult, result);

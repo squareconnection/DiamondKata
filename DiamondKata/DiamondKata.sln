@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondKataService.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondKataConsole", "DiamondKataConsole\DiamondKataConsole.csproj", "{AEC6806D-975B-4636-81EB-FA3958BC0692}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondKataContracts", "DiamondKataContracts\DiamondKataContracts.csproj", "{40107FB5-6F8F-4987-8910-149F2A0D031B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{AEC6806D-975B-4636-81EB-FA3958BC0692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEC6806D-975B-4636-81EB-FA3958BC0692}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEC6806D-975B-4636-81EB-FA3958BC0692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40107FB5-6F8F-4987-8910-149F2A0D031B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40107FB5-6F8F-4987-8910-149F2A0D031B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40107FB5-6F8F-4987-8910-149F2A0D031B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40107FB5-6F8F-4987-8910-149F2A0D031B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

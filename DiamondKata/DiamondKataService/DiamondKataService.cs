@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text;
+using DiamondKata.Contracts;
 
+[assembly: InternalsVisibleTo("DiamondKataService.Tests")]
 namespace DiamondKata.Services
 {
-    public class DiamondKataService
+    public class DiamondKataService : IDiamondKataService
     {
-        public string PrintLine(char character, int maxLineLength)
+        internal string PrintLine(char character, int maxLineLength)
         {
             StringBuilder sb = new StringBuilder();
             //get what number of iterations this char should be
